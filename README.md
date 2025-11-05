@@ -1,318 +1,116 @@
+# 🧠 Smart E-Learning Management System
 
-╔════════════════════════════════════════════════════════╗
-║  SPRING & HIBERNATE COMPREHENSIVE DEMONSTRATION        ║
-╚════════════════════════════════════════════════════════╝
+### 🚀 Overview
+The **Smart E-Learning Management System** is a Java-based web application designed to simplify online learning, course management, and student–teacher interaction.  
+It provides a centralized platform for students, instructors, and administrators to manage all aspects of online education efficiently.
 
+---
 
-============================================================
-PART A: SPRING DEPENDENCY INJECTION (JAVA-BASED CONFIG)
-============================================================
-INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext
-INFO: Overriding bean definition for bean 'course'
-INFO: Creating shared instance of singleton bean 'springDIConfig'
-INFO: Creating shared instance of singleton bean 'course'
-INFO: Creating shared instance of singleton bean 'studentBean'
+## 🎯 Objectives
+- Provide a digital platform for interactive online learning.
+- Enable students to register, enroll in courses, take quizzes, and view progress.
+- Allow instructors to upload materials, manage students, and evaluate performance.
+- Give admins full control over user, course, and system management.
 
-Student Name: John Doe
-Roll Number: 12345
-Course: Computer Science (Code: CS101)
+---
 
-INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext
+## 🧩 Features
 
+### 👩‍🎓 For Students
+- Register and log in securely  
+- Browse and enroll in courses  
+- View and download study materials  
+- Take online quizzes and track progress  
 
-============================================================
-PART B: HIBERNATE CRUD OPERATIONS
-============================================================
-INFO: HHH000204: Processing PersistenceUnitInfo [name: default]
-INFO: HHH000412: Hibernate Core {5.6.10.Final}
-INFO: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+### 👨‍🏫 For Instructors
+- Create and manage courses  
+- Upload lectures, notes, and assignments  
+- View enrolled students and grade submissions  
 
-1. CREATE - Adding Students...
-Hibernate: 
-    insert 
-    into
-        students
-        (age, course, email, student_name) 
-    values
-        (?, ?, ?, ?)
-Student saved successfully!
+### 🧑‍💼 For Admins
+- Manage users (students/instructors)  
+- Add, update, or delete courses  
+- Monitor system performance  
 
-Hibernate: 
-    insert 
-    into
-        students
-        (age, course, email, student_name) 
-    values
-        (?, ?, ?, ?)
-Student saved successfully!
+---
 
-2. READ - Fetching All Students...
-Hibernate: 
-    select
-        student0_.student_id as student_1_2_,
-        student0_.age as age2_2_,
-        student0_.course as course3_2_,
-        student0_.email as email4_2_,
-        student0_.student_name as student_5_2_ 
-    from
-        students student0_
+## ⚙️ Technologies Used
+| Layer | Technology |
+|-------|-------------|
+| **Frontend** | HTML, CSS, JavaScript |
+| **Backend** | Java, JSP, Servlets |
+| **Database** | MySQL |
+| **IDE** | NetBeans / VS Code |
+| **Server** | Apache Tomcat |
+| **Version Control** | Git & GitHub |
 
-Student [ID=1, Name=Alice Johnson, Email=alice@example.com, Age=20, Course=Computer Science]
-Student [ID=2, Name=Bob Smith, Email=bob@example.com, Age=22, Course=Mechanical Engineering]
+---
 
-3. UPDATE - Modifying Student...
-Hibernate: 
-    select
-        student0_.student_id as student_1_2_0_,
-        student0_.age as age2_2_0_,
-        student0_.course as course3_2_0_,
-        student0_.email as email4_2_0_,
-        student0_.student_name as student_5_2_0_ 
-    from
-        students student0_ 
-    where
-        student0_.student_id=?
+## 🧱 Project Structure
 
-Hibernate: 
-    update
-        students 
-    set
-        age=?,
-        course=?,
-        email=?,
-        student_name=? 
-    where
-        student_id=?
-Student updated successfully!
+```
+Smart-E-Learning/
+│
+├── src/
+│   ├── com/
+│   │   └── elearning/
+│   │       ├── controller/
+│   │       ├── dao/
+│   │       ├── model/
+│   │       └── util/
+│
+├── WebContent/
+│   ├── WEB-INF/
+│   │   └── web.xml
+│   ├── pages/
+│   │   ├── student/
+│   │   ├── instructor/
+│   │   └── admin/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── OUTPUT/
+│   └── output_1.png
+│
+├── CombinedMainApp.java
+└── README.md
+```
 
-4. READ - Fetching Single Student...
-Hibernate: 
-    select
-        student0_.student_id as student_1_2_0_,
-        student0_.age as age2_2_0_,
-        student0_.course as course3_2_0_,
-        student0_.email as email4_2_0_,
-        student0_.student_name as student_5_2_0_ 
-    from
-        students student0_ 
-    where
-        student0_.student_id=?
+---
 
-Student [ID=1, Name=Alice Johnson, Email=alice@example.com, Age=21, Course=Software Engineering]
+## 🖼️ Output 
 
-5. DELETE - Removing Student...
-Hibernate: 
-    select
-        student0_.student_id as student_1_2_0_,
-        student0_.age as age2_2_0_,
-        student0_.course as course3_2_0_,
-        student0_.email as email4_2_0_,
-        student0_.student_name as student_5_2_0_ 
-    from
-        students student0_ 
-    where
-        student0_.student_id=?
+![Application Output](OUTPUT/output_1.png)
 
-Hibernate: 
-    delete 
-    from
-        students 
-    where
-        student_id=?
-Student deleted successfully!
+---
 
-6. Final Student List:
-Hibernate: 
-    select
-        student0_.student_id as student_1_2_,
-        student0_.age as age2_2_,
-        student0_.course as course3_2_,
-        student0_.email as email4_2_,
-        student0_.student_name as student_5_2_ 
-    from
-        students student0_
+## 🧩 How to Run the Project
 
-Student [ID=1, Name=Alice Johnson, Email=alice@example.com, Age=21, Course=Software Engineering]
+### 🪶 Prerequisites
+- Install **Java JDK 17+**
+- Install **Apache Tomcat 9+**
+- Install **MySQL Server**
+- IDE: **NetBeans / VS Code**
 
+### 🪜 Steps to Run
+1. Clone this repository  
+   ```bash
+   git clone https://github.com/yourusername/Smart-E-Learning-Management-System.git
+   ```
+2. Open the project in your preferred IDE.
+3. Configure your **database connection** in `DBConnection.java`:
+   ```java
+   String url = "jdbc:mysql://localhost:3306/elearning_db";
+   String username = "root";
+   String password = "your_password";
+   ```
+4. Import the `elearning_db.sql` file into MySQL.
+5. Build and run the project on **Apache Tomcat Server**.
+6. Open your browser and go to:
+   ```
+   http://localhost:8080/Smart-E-Learning/
+   ```
 
-============================================================
-PART C: SPRING + HIBERNATE TRANSACTION MANAGEMENT
-============================================================
-INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext
-INFO: Creating shared instance of singleton bean 'springHibernateConfig'
-INFO: Creating shared instance of singleton bean 'dataSource'
-INFO: Creating shared instance of singleton bean 'sessionFactory'
-INFO: Building JPA container EntityManagerFactory for persistence unit 'default'
-INFO: HHH000204: Processing PersistenceUnitInfo [name: default]
-INFO: HHH000412: Hibernate Core {5.6.10.Final}
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-INFO: Creating shared instance of singleton bean 'transactionManager'
-INFO: Creating shared instance of singleton bean 'bankingService'
-INFO: Creating shared instance of singleton bean 'accountDAO'
-INFO: Creating shared instance of singleton bean 'transactionDAO'
+---
 
-1. Creating Bank Accounts...
-Hibernate: 
-    insert 
-    into
-        accounts
-        (account_number, balance, holder_name) 
-    values
-        (?, ?, ?)
-Account created: Account [ID=1, Number=ACC001, Holder=John Doe, Balance=$5000.0]
-
-Hibernate: 
-    insert 
-    into
-        accounts
-        (account_number, balance, holder_name) 
-    values
-        (?, ?, ?)
-Account created: Account [ID=2, Number=ACC002, Holder=Jane Smith, Balance=$3000.0]
-
-2. Initial Account Balances:
-Hibernate: 
-    select
-        account0_.account_id as account_1_0_,
-        account0_.account_number as account_2_0_,
-        account0_.balance as balance3_0_,
-        account0_.holder_name as holder_n4_0_ 
-    from
-        accounts account0_ 
-    where
-        account0_.account_number=?
-
-Account [ID=1, Number=ACC001, Holder=John Doe, Balance=$5000.0]
-Account [ID=2, Number=ACC002, Holder=Jane Smith, Balance=$3000.0]
-
-3. Performing Successful Transfer...
-
-=== Starting Money Transfer ===
-From: ACC001 To: ACC002 Amount: $500.0
-
-Hibernate: 
-    select
-        account0_.account_id as account_1_0_,
-        account0_.account_number as account_2_0_,
-        account0_.balance as balance3_0_,
-        account0_.holder_name as holder_n4_0_ 
-    from
-        accounts account0_ 
-    where
-        account0_.account_number=?
-
-Hibernate: 
-    select
-        account0_.account_id as account_1_0_,
-        account0_.account_number as account_2_0_,
-        account0_.balance as balance3_0_,
-        account0_.holder_name as holder_n4_0_ 
-    from
-        accounts account0_ 
-    where
-        account0_.account_number=?
-
-Deducting $500.0 from ACC001
-Hibernate: 
-    update
-        accounts 
-    set
-        account_number=?,
-        balance=?,
-        holder_name=? 
-    where
-        account_id=?
-
-Adding $500.0 to ACC002
-Hibernate: 
-    update
-        accounts 
-    set
-        account_number=?,
-        balance=?,
-        holder_name=? 
-    where
-        account_id=?
-
-Hibernate: 
-    insert 
-    into
-        transactions
-        (amount, from_account, status, to_account, transaction_date) 
-    values
-        (?, ?, ?, ?, ?)
-
-Transaction completed successfully!
-New balance of ACC001: $4500.0
-New balance of ACC002: $3500.0
-
-4. Final Account Balances:
-Hibernate: 
-    select
-        account0_.account_id as account_1_0_,
-        account0_.account_number as account_2_0_,
-        account0_.balance as balance3_0_,
-        account0_.holder_name as holder_n4_0_ 
-    from
-        accounts account0_ 
-    where
-        account0_.account_number=?
-
-Account [ID=1, Number=ACC001, Holder=John Doe, Balance=$4500.0]
-Account [ID=2, Number=ACC002, Holder=Jane Smith, Balance=$3500.0]
-
-5. Testing Transaction Rollback (Insufficient Balance)...
-
-=== Starting Money Transfer ===
-From: ACC001 To: ACC002 Amount: $10000.0
-
-Hibernate: 
-    select
-        account0_.account_id as account_1_0_,
-        account0_.account_number as account_2_0_,
-        account0_.balance as balance3_0_,
-        account0_.holder_name as holder_n4_0_ 
-    from
-        accounts account0_ 
-    where
-        account0_.account_number=?
-
-Hibernate: 
-    select
-        account0_.account_id as account_1_0_,
-        account0_.account_number as account_2_0_,
-        account0_.balance as balance3_0_,
-        account0_.holder_name as holder_n4_0_ 
-    from
-        accounts account0_ 
-    where
-        account0_.account_number=?
-
-❌ Transaction Failed: Insufficient balance in account: ACC001
-✓ All changes have been rolled back!
-
-6. Balances After Failed Transaction (Should be unchanged):
-Hibernate: 
-    select
-        account0_.account_id as account_1_0_,
-        account0_.account_number as account_2_0_,
-        account0_.balance as balance3_0_,
-        account0_.holder_name as holder_n4_0_ 
-    from
-        accounts account0_ 
-    where
-        account0_.account_number=?
-
-Account [ID=1, Number=ACC001, Holder=John Doe, Balance=$4500.0]
-Account [ID=2, Number=ACC002, Holder=Jane Smith, Balance=$3500.0]
-
-INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext
-INFO: HHH000030: Cleaning up connection pool [jdbc:mysql://localhost:3306/combined_db]
-
-============================================================
-ALL DEMONSTRATIONS COMPLETED SUCCESSFULLY!
-============================================================
-
-Process finished with exit code 0
